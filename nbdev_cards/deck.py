@@ -40,6 +40,7 @@ def remove(self:Deck,
 # %% ../01_deck.ipynb 16
 def draw_n(n:int, # Number of cards to draw
            replace:bool=True): # Whether or not to draw with replacement
+    #obtain a deck
     d= Deck()
     d.shuffle()
     if replace: return [d.cards[random.choice(range(len(d.cards)))] for _ in range(n) ]
