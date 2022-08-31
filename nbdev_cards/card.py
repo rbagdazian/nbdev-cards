@@ -33,3 +33,4 @@ def __gt__(self:Card,a:Card): return (self.suit,self.rank) > (a.suit,a.rank)
 def __le__(self:Card,a:Card): return (self.suit,self.rank) <= (a.suit,a.rank)
 @patch
 def __ge__(self:Card,a:Card): return (self.suit,self.rank) >= (a.suit,a.rank)
+
