@@ -18,7 +18,7 @@ class Deck:
     __repr__=__str__
 
     def shuffle(self):
-        "Shuffles the cards in the deck"
+        "Shuffles the cards in a deck"
         random.shuffle(self.cards)
 
                                       
