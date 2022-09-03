@@ -20,9 +20,10 @@ or:
 
 ## How to use
 
-This lib provides a
-[`Card`](https://rbagdazian.github.io/nbdev-cards/card.html#card) class
-you can use to create, display, and compare playing cards:
+This lib provides
+[`Card`](https://rbagdazian.github.io/nbdev-cards/card.html#card) and
+[`Deck`](https://rbagdazian.github.io/nbdev-cards/deck.html#deck)
+classes you can use to create, display, and compare playing cards:
 
 ``` python
 Card(2,3)

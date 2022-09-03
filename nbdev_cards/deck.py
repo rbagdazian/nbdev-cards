@@ -3,7 +3,7 @@
 # %% auto 0
 __all__ = ['Deck', 'draw_n']
 
-# %% ../01_deck.ipynb 1
+# %% ../01_deck.ipynb 0
 from .card import *
 from fastcore.utils import *
 import random
