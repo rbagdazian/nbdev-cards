@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "nbdev-cards",
+    "section": "",
+    "text": "A deck of cards demo of nbdev based on ideas from Think Python 2nd Edition by Allen B. Downey."
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "nbdev-cards",
+    "section": "Install",
+    "text": "Install\nInstall using:\npip install nbdev-cards\nor:\nconda install -c fastai nbdev-cards"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "nbdev-cards",
+    "section": "How to use",
+    "text": "How to use\nThis lib provides a card and deck class you can use to create, display, and compare playing cards (on main branch 2):\n\nCard(2,3)\n\n3❤️\n\n\nSuits are numbered according to this list:\n\nsuits\n\n['♣️', '♦️', '❤️', '♠️']\n\n\nA Deck represents the standard playing card deck\n\nDeck()\n\nA♣️; 2♣️; 3♣️; 4♣️; 5♣️; 6♣️; 7♣️; 8♣️; 9♣️; 10♣️; J♣️; Q♣️; K♣️; A♦️; 2♦️; 3♦️; 4♦️; 5♦️; 6♦️; 7♦️; 8♦️; 9♦️; 10♦️; J♦️; Q♦️; K♦️; A❤️; 2❤️; 3❤️; 4❤️; 5❤️; 6❤️; 7❤️; 8❤️; 9❤️; 10❤️; J❤️; Q❤️; K❤️; A♠️; 2♠️; 3♠️; 4♠️; 5♠️; 6♠️; 7♠️; 8♠️; 9♠️; 10♠️; J♠️; Q♠️; K♠️"
+  },
+  {
+    "objectID": "card.html",
+    "href": "card.html",
+    "title": "Card – A Basic Playing Card",
+    "section": "",
+    "text": "We will be using numbers to represent suits and ranks. These are the suits:\nFor instance suit at index 2 :\nThese are the ranks\nFor instance, the card at index 2 (note there is no card at index 0 so that the indices match the card rank) is:\nsource"
+  },
+  {
+    "objectID": "card.html#comparison-operators",
+    "href": "card.html#comparison-operators",
+    "title": "Card – A Basic Playing Card",
+    "section": "Comparison operators",
+    "text": "Comparison operators\nEquality, Less than, and Greater than work on the rank and suit indices\nFor example: here are some defined comparison tests\n\ntest_eq(Card(suit=1, rank=3),Card(suit=1, rank=3))\ntest_ne(Card(suit=2, rank=3),Card(suit=1, rank=3))\ntest_ne(Card(suit=1, rank=4),Card(suit=1, rank=3))\nassert Card(suit=1, rank=3) <= Card(suit=1, rank=4)\nassert Card(suit=1, rank=4) >= Card(suit=1, rank=3)\n\n\nassert Card(suit=1, rank=2)<Card(suit=1, rank=3)\n\n\n#! hide\nc1=Card(suit=1,rank=3)\nc2=Card(suit=1,rank=4)\nc3=Card(suit=1,rank=3)\nc4=Card(suit=2,rank=3)\n\n\nprint(f'c1:{c1}    c2:{c2}    c3:{c3}    c4:{c4}')\n\nc1:3♦️    c2:4♦️    c3:3♦️    c4:3❤️\n\n\n\nassert c1<c2\nassert c1<=c3\nassert c4>c2\nassert c1>=c3\nassert Card(suit=3, rank=3)>Card(suit=2, rank=3)\nassert not Card(suit=1, rank=3)>Card(suit=2, rank=3)"
+  },
+  {
+    "objectID": "deck.html",
+    "href": "deck.html",
+    "title": "deck",
+    "section": "",
+    "text": "source\n\nDeck\n\n Deck ()\n\nA deck of 52 cards, not including jokers\nWhen we initially create a deck, all of the cards will be present:\n\ndeck = Deck()\ndeck\n\nA♣️; 2♣️; 3♣️; 4♣️; 5♣️; 6♣️; 7♣️; 8♣️; 9♣️; 10♣️; J♣️; Q♣️; K♣️; A♦️; 2♦️; 3♦️; 4♦️; 5♦️; 6♦️; 7♦️; 8♦️; 9♦️; 10♦️; J♦️; Q♦️; K♦️; A❤️; 2❤️; 3❤️; 4❤️; 5❤️; 6❤️; 7❤️; 8❤️; 9❤️; 10❤️; J❤️; Q❤️; K❤️; A♠️; 2♠️; 3♠️; 4♠️; 5♠️; 6♠️; 7♠️; 8♠️; 9♠️; 10♠️; J♠️; Q♠️; K♠️\n\n\n\nlen(deck)\n\n52\n\n\n\nsuits\n\n['♣️', '♦️', '❤️', '♠️']\n\n\n\nCard(1,1) in deck.cards\n\nTrue\n\n\n\nsource\n\n\nDeck.pop\n\n Deck.pop (idx:int=-1)\n\nRemove one card from the deck\n\n\n\n\n\n\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nidx\nint\n-1\nthe index of the cards to remove, defaulting to the last card in the deck\n\n\n\n\ndeck.pop()\n\nK♠️\n\n\n\ndeck=Deck()\ndp = deck.pop()\nct = Card(3,13)\ntest_eq(dp,ct)\n\n\nsource\n\n\nDeck.remove\n\n Deck.remove (card:nbdev_cards.card.Card)\n\nRemoves card from deck or raises exception if it’s not available\n\n\n\n\nType\nDetails\n\n\n\n\ncard\nCard\nCard to remove\n\n\n\n\ncard23 = Card(2,3)\ndeck.remove(card23)\n\nassert card23 not in deck\n\n\nsource\n\n\nDeck.shuffle\n\n Deck.shuffle ()\n\nShuffles the cards in a deck\n\nsource\n\n\ndraw_n\n\n draw_n (n:int, replace:bool=True)\n\n\n\n\n\nType\nDefault\nDetails\n\n\n\n\nn\nint\n\nNumber of cards to draw\n\n\nreplace\nbool\nTrue\nWhether or not to draw with replacement\n\n\n\n\ndraw_n(13,replace=False)\n\n[7❤️, 2❤️, K♠️, 3♦️, J❤️, 9♦️, 5♣️, 4❤️, J♦️, J♠️, 2♠️, 3❤️, 9♣️]"
+  }
+]
