@@ -20,7 +20,6 @@ website:
   description: "From tutorial"
   twitter-card: true
   open-graph: true
-  reader-mode: true
   repo-branch: master
   repo-url: "https://github.com/rbagdazian/nbdev-cards"
   repo-actions: [issue]
